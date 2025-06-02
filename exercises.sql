@@ -7,5 +7,11 @@ on books.id=authors.id;
 select join_date,name
 from members
 where extract(year from join_date)=2024;
+--Display all books currently available for borrowing.
+select title,book_id
+from books
+left join loans 
+on books.id=loans.book_id
+where return_date is not null;
 
 
