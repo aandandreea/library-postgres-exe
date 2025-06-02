@@ -24,5 +24,5 @@ having COUNT(member_id)>3;
 SELECT book_id
 FROM loans
 GROUP BY book_id
-ORDER BY book_id DESC
+ORDER BY count(book_id) DESC
 LIMIT 1;
