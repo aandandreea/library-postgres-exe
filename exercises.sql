@@ -20,5 +20,9 @@ inner join members
 on members.id=loans.member_id
 group by member_id
 having COUNT(member_id)>3;
-
-
+--Find the most borrowed book.
+SELECT book_id
+FROM loans
+GROUP BY book_id
+ORDER BY book_id DESC
+LIMIT 1;
