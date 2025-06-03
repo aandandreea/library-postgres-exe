@@ -26,3 +26,7 @@ FROM loans
 GROUP BY book_id
 ORDER BY count(book_id) DESC
 LIMIT 1;
+--List overdue loans (loaned more than 30 days ago and not yet returned).
+select loan_date
+from loans 
+where loan_date<now()-interval'30 days'and return_date is null;
