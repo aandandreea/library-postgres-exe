@@ -37,3 +37,9 @@ from
  from loans
  group by member_id
 )sub;
+--Find the top 3 most active members by total borrow count.
+ select count(book_id) as count_books
+ from loans
+ group by member_id
+order by count_books desc;
+
