@@ -30,7 +30,7 @@ LIMIT 1;
 select loan_date
 from loans 
 where loan_date<now()-interval'30 days'and return_date is null;
---Get the average number of books borrowed per member.------
+--Get the average number of books borrowed per member.
 select avg(count_books),member_id
 from 
 (select count(book_id) as count_books
@@ -42,4 +42,14 @@ from
  from loans
  group by member_id
 order by count_books desc;
+--Get the list of authors whose books have never been borrowed.
+select * 
+from authors a
+where not exists (
+select 1
+from books b
+join loans l
+on b.id=l.book_id
+where b.author_id=a.id
+)
 
