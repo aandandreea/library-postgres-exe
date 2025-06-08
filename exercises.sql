@@ -66,4 +66,12 @@ on movies.id = boxoffice.movie_id;
 select title, year
 from movies
 where year%2 = 0;
+--Find the longest time that an employee has been at the studio
+select name,max(years_employed)
+from employees;
+--For each role, find the average number of years employed by employees in that role
+select name,role,avg(years_employed)
+from employees
+group by role;
+
 
