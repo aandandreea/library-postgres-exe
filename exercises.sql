@@ -51,5 +51,19 @@ from books b
 join loans l
 on b.id=l.book_id
 where b.author_id=a.id
-)
+);
+--List all movies and their combined sales in millions of dollars
+select title, (domestic_sales + international_sales)/1000000 as combined_sales_millions
+from movies
+inner join boxoffice
+On movies.id = boxoffice.movie_id;
+--List all movies and their ratings in percent
+select title,rating*10 as rating_percent
+from movies
+join boxoffice
+on movies.id = boxoffice.movie_id;
+--List all movies that were released on even number years
+select title, year
+from movies
+where year%2 = 0;
 
