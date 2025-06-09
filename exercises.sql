@@ -107,5 +107,7 @@ insert into movies values ("4","Toy Story 4","John Lasseter","1999","90");
 update movies
 set director="John Lasseter"
 where title="A Bug's Life";
---
+--Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
+alter table movies
+add Aspect_ratio float;
 
