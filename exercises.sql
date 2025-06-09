@@ -110,4 +110,8 @@ where title="A Bug's Life";
 --Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
 alter table movies
 add Aspect_ratio float;
+--Add another column named Language with a TEXT data type and set as default language english.
+alter table movies
+add Language text
+default english;
 
