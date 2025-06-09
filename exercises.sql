@@ -103,5 +103,9 @@ on b.movie_id=m.id
 group by director;
 --Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
 insert into movies values ("4","Toy Story 4","John Lasseter","1999","90");
+--The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
+update movies
+set director="John Lasseter"
+where title="A Bug's Life";
 --
 
