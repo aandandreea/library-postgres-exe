@@ -76,5 +76,32 @@ group by role;
 --Find the total number of employee years worked in each building 
 select sum(years_employed) as total,building
 from employees
-group by building
+group by building;
+--Find the number of Artists in the studio (without a HAVING clause) 
+select name,count(role)
+from employees
+where role="Artist";
+--Find the number of Employees of each role in the studio
+select count(role),role
+from employees
+group by role;
+--Find the total number of years employed by all Engineers
+select sum(years_employed)
+from employees
+where role="Engineer"
+--Find the number of movies each director has directed 
+select count(id),director
+from boxoffice b
+inner join movies m
+on b.movie_id=m.id
+group by director;
+--Find the total domestic and international sales that can be attributed to each director
+select sum(domestic_sales + international_sales),director
+from boxoffice b
+inner join movies m
+on b.movie_id=m.id
+group by director;
+--Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
+insert into movies values ("4","Toy Story 4","John Lasseter","1999","90");
+--
 
