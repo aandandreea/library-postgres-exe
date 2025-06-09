@@ -73,5 +73,8 @@ from employees;
 select name,role,avg(years_employed)
 from employees
 group by role;
-
+--Find the total number of employee years worked in each building 
+select sum(years_employed) as total,building
+from employees
+group by building
 
